@@ -6,6 +6,10 @@ pipeline{
     }
     stages{
         stage ('first build'){
+            environment {
+                course ="gcp"
+                name ="latha"
+            }
             steps{
                 echo "my first build $course"
             }
