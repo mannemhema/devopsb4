@@ -1,7 +1,7 @@
 pipeline{
     agent any 
     stages{
-      stage('first build'){
+      stage ('first build'){
           steps{
             echo "my mbp first file"
           }
