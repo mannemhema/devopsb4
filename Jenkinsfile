@@ -1,24 +1,16 @@
 pipeline{
     agent any 
-    environment {
-        course ="k8s"
-        name ="hema"
-    }
     stages{
         stage ('first build'){
-            environment {
-                course ="gcp"
-                name ="latha"
+            environment{
+                GITHUB_CREDENTIALS = credentials('github')
             }
             steps{
-                echo "my first build $course"
+                echo "creds added ${GITHUB_CREDENTIALS}"
+                echo "UserId is ${GITHUB_CREDENTIALS_USR}"
+                echo "password is ${GITHUB_CREDENTIALS_PSW}"
             }
+
         }
-        stage ('second'){
-            steps{
-                echo "scan sample one $name"
-            }
-        }
-    }
-    
+    }    
 }
