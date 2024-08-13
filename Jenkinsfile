@@ -1,17 +1,15 @@
 pipeline{
-    agent any
-    stages{
-        stage('My First Build'){
-            steps{
-                echo "Hello its my first build welcome to pipeline jenkins"
+    agent any 
+      stages{
+          stage('first build'){
+            script{
+                def course ="k8s"
+                if(course=="k8s"){
+                    println("enrolled in $course")
+                }
+                else 
+                println("try to enroll any course")
             }
-        }
-        stage('second build'){
-            steps{
-                echo "good trying"
-            }
-            
         }
     }
-
 }
