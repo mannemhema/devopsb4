@@ -1,7 +1,10 @@
 pipeline{
     agent any 
-      stages{
-        stage('first build'){
+    stages{
+      stage('first build'){
+          steps{
+            echo "my mbp first file"
+          }
             script{
                 def course ="k8s"
                 if(course=="k8s"){
