@@ -1,21 +1,20 @@
 pipeline{
     agent any 
-    stages{
-      stage ('my first build'){
-        steps{
-            echo "my mbp first file"
-            sleep 10
-          script {
-            def course ="k8s"
-                if(course=="k8s"){
-                    println("enrolled in $course")
-                }
-                else 
-                println("try to enroll any course")
-                }
-            }     
-        }
-
-    
+    environment {
+        course ="k8s"
+        name ="hema"
     }
-}    
+    stages{
+        stage ('first build'){
+            steps{
+                echo "my first build $course"
+            }
+        }
+        stage ('second'){
+            steps{
+                echo "scan sample one $name"
+            }
+        }
+    }
+    
+}
